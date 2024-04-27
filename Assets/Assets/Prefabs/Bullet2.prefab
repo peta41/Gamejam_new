@@ -76,7 +76,7 @@ MonoBehaviour:
   damage: 35
   speed: 20
   rb: {fileID: 6282563951348033816}
-  impactEffect: {fileID: 0}
+  impactEffect: {fileID: 4773059451946283006}
   impactSound: {fileID: 0}
 --- !u!1 &4773059451946283006
 GameObject:
