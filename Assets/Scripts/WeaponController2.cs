@@ -4,23 +4,42 @@ using UnityEngine;
 
 public class WeaponController2 : MonoBehaviour
 {
-    public GameObject bulletPrefab;  // Reference to the bullet prefab
-    public Transform bulletSpawn;    // Transform of the bullet spawn point
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
     private float lastAttackTime;
     public bool CanAttack = true;
-    [SerializeField]
-    public float firerate = 0.5f;
+    [SerializeField] public float firerate = 0.5f;
+    public float bulletLife = 3f;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && CanAttack)
+        if (Input.GetMouseButtonDown(0))
         {
-            CanAttack = false;
-            lastAttackTime = Time.time;
-
-            // Shoot towards cursor
-            ShootTowardsCursor();
+            if (CanAttack)
+            {
+                Shoot();
+            }
         }
+    }
+
+    void Shoot()
+    {
+        CanAttack = false;
+        lastAttackTime = Time.time;
+
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+
+        Vector3 shootDirection = transform.forward;
+
+        bullet.GetComponent<Rigidbody>().velocity = shootDirection * 10f;
+
+        StartCoroutine(DestroyBulletAfterDelay(bullet));
+    }
+
+    IEnumerator DestroyBulletAfterDelay(GameObject bullet)
+    {
+        yield return new WaitForSeconds(bulletLife);
+        Destroy(bullet);
     }
 
     void FixedUpdate()
@@ -29,14 +48,5 @@ public class WeaponController2 : MonoBehaviour
         {
             CanAttack = true;
         }
-    }
-
-    private void ShootTowardsCursor()
-    {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, Camera.main.transform.position.y - bulletSpawn.position.y));
-        Vector3 shootingDirection = (mousePosition - bulletSpawn.position).normalized;
-        Quaternion bulletRotation = Quaternion.LookRotation(shootingDirection);
-        Instantiate(bulletPrefab, bulletSpawn.position, bulletRotation);
     }
 }

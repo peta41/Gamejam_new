@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZralokHitbox : MonoBehaviour
 {
-    // Předpokládáme, že máte nějaký způsob, jak identifikovat objekty s tagem "Enemy"
+
     // a jak na ně aplikovat škodu. Tento příklad předpokládá, že máte metodu TakeDamage v skriptu Enemy.
 
     void OnTriggerEnter(Collider other)
