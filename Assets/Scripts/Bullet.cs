@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
+        // Nastavení rychlosti střely bez delay
         rb.velocity = transform.forward * speed;
     }
 
@@ -27,14 +28,16 @@ public class Bullet : MonoBehaviour
             if (enemyScript != null)
             {
                 // Aplikace škody na nepřítele
-                enemyScript.TakeDamage(damage);
+                enemyScript.TakeDamage(damage); 
+                Debug.Log("Hit");
 
+                
                 // Vytvoření efektu dopadu na místě dopadu
                 if (impactEffect != null)
                 {
                     GameObject effectInstance = Instantiate(impactEffect, collision.contacts[0].point, Quaternion.LookRotation(collision.contacts[0].normal));
                     // Zničení efektu dopadu po 0.5 sekundách
-                    Destroy(effectInstance, 0.5f);
+                    Destroy(effectInstance, 0.2f);
                 }
 
                 // Přehrání zvuku dopadu

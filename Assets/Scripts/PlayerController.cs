@@ -20,17 +20,15 @@ public class PlayerController : MonoBehaviour
         if (moveHorizontal != 0 || moveVertical != 0)
         {
             isWalking = true;
+            Walk(); // Volání metody Walk pro aktivování animaci chůze
         }
         else
         {
             isWalking = false;
         }
 
-        // Nastavení parametru pro Animator
-        animator.SetBool("IsWalking", isWalking);
-
         // Kontrola pro útok
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) // Odebrána kontrola, zda hráč může střílet
         {
             Attack();
         }
@@ -40,5 +38,11 @@ public class PlayerController : MonoBehaviour
     {
         // Spuštění animace útoku
         animator.SetTrigger("Attack");
+    }
+
+    public void Walk()
+    {
+        // Aktivace animaci chůze
+        animator.SetTrigger("Walk");
     }
 }
