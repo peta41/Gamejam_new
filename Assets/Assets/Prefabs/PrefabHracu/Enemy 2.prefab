@@ -1224,9 +1224,9 @@ GameObject:
   - component: {fileID: 6912709743471076872}
   - component: {fileID: -5345761965091708009}
   - component: {fileID: -8194692800007318441}
-  - component: {fileID: -3099593463282213907}
+  - component: {fileID: -5310385906615509466}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy 2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1276,7 +1276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b516ed113a6040ee8c6bf36a064d399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 5317696174035042918, guid: 03a9c8427ad144385afe7ee47e2dbf45, type: 3}
+  Player: {fileID: 2922619688168825014, guid: 50d402fed6a28433a9c2e5c00d095680, type: 3}
   customSpeed: 3.5
   approachDistance: 5
 --- !u!195 &7696565934911300618
@@ -1329,7 +1329,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1454,7 +1454,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-3099593463282213907
+--- !u!114 &-5310385906615509466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

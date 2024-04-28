@@ -18,9 +18,9 @@ public class ZralokHitbox : MonoBehaviour
             // Kontrola, zda má objekt skript Enemy
             if (enemyScript != null)
             {
-                
+                Debug.Log("Zralok hit");
                 // Aplikace škody na objekt "Enemy"
-                enemyScript.TakeDamage(100); // Předpokládáme, že metoda TakeDamage přijímá hodnotu škody jako argument
+                enemyScript.TakeDamage(50); // Předpokládáme, že metoda TakeDamage přijímá hodnotu škody jako argument
             }
         }
     }

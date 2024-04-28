@@ -21,17 +21,20 @@ public class WeaponController3 : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Kontrola, zda AxeHitBox narazil na hráče
-        if (other.gameObject.CompareTag("Player"))
-        {
-            // Získání skriptu EnemyStats z hráče
-            EnemyStats enemyScript = other.gameObject.GetComponent<EnemyStats>();
 
-            // Kontrola, zda má hráč skript EnemyStats
-            if (enemyScript != null)
+       if (other.gameObject.CompareTag("Player"))
+        {
+            // Vypíše zprávu do konzole Unity
+            Debug.Log("Hit");
+
+            // Získání skriptu Player z hráče
+            Player playerScript = other.gameObject.GetComponent<Player>();
+
+            // Kontrola, zda má hráč skript Player
+            if (playerScript != null)
             {
                 // Aplikace škody na hráče
-                enemyScript.TakeDamage(damage);
+                playerScript.TakeDamage(damage);
             }
         }
     }
