@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene/Shark Scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/SampleScene/OptionsScene.unity
+    guid: bc91366d16ff4d749811e76a525db9f1
+  - enabled: 1
+    path: Assets/Scenes/SampleScene/VictoryScene.unity
+    guid: 084bce4876bdf744c8a33afb75c1ff60
   m_configObjects: {}
