@@ -44,6 +44,6 @@ public class PlayerController : MonoBehaviour
     public void Walk()
     {
         // Aktivace animaci chůze
-        animator.SetTrigger("Walk");
+
     }
 }

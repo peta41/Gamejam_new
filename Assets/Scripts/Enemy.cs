@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-        void OnTriggerEnter(Collider other)
-    {
-        // Zkontrolujte, zda se kolidující objekt jmenuje "Player"
-        if (other.gameObject.CompareTag("Player"))
-        {
-            // Získání skriptu Enemy z kolidujícího objektu
-            Player player = other.gameObject.GetComponent<Player>();
 
-            // Kontrola, zda má objekt skript Enemy
-            if (player != null)
+    public int damage = 10;
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // Kontrola, zda se nepřítel dotkl hráče
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Získání skriptu Player z hráče
+            Player playerScript = collision.gameObject.GetComponent<Player>();
+
+            // Kontrola, zda má hráč skript Player
+            if (playerScript != null)
             {
-                
-                Debug.Log("Hit Enemy");
-                player.TakeDamage(10); // Předpokládáme, že metoda TakeDamage přijímá hodnotu škody jako argument
+                // Aplikace škody na hráče
+                playerScript.TakeDamage(damage);
             }
         }
     }
