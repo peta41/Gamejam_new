@@ -1637,7 +1637,7 @@ Transform:
   m_GameObject: {fileID: 5148099539638774742}
   serializedVersion: 2
   m_LocalRotation: {x: 0.9982055, y: -0.000000021415286, z: -0.00000035698508, w: -0.059881918}
-  m_LocalPosition: {x: 0.0000000018888024, y: 0.005804518, z: 0.0026449333}
+  m_LocalPosition: {x: 0, y: 0.00583, z: 0.00245}
   m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000031}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1728,10 +1728,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1877766620527743596, guid: 3eb7f25ff73684cd69857ed19390355b, type: 3}
+  clickSound: {fileID: 0}
   bulletSpawn: {fileID: 6673115444243541882}
-  CanAttack: 1
-  firerate: 0.5
-  bulletLife: 3
+  shootCooldown: 1
+  audioSource: {fileID: 0}
 --- !u!114 &7080228775815150483
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
             {
                 // Aplikace škody na nepřítele
                 enemyScript.TakeDamage(damage); 
-                Debug.Log("Hit");
+                Debug.Log("Bullet Hit");
                 
 
 
@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour
                 {
                     GameObject effectInstance = Instantiate(impactEffect, collision.contacts[0].point, Quaternion.LookRotation(collision.contacts[0].normal));
                     // Zničení efektu dopadu po 0.5 sekundách
-                    Destroy(effectInstance, 0.2f);
+                    Destroy(effectInstance, 0.5f);
                 }
 
                 // Přehrání zvuku dopadu
