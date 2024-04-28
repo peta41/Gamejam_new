@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI; // Přidáno pro práci s UI
 using System.Collections.Generic; // Přidáno pro práci s kolekcemi
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
     public  int[] numberOfEnemies; // Počet nepřátelských postav v každé vlně
     public Text enemyCountText; // UI komponenta pro zobrazení počtu nepřátel
 
+    private bool GameCanEnd = false;
     private int waveIndex = 0;
     public static List<GameObject> currentEnemies = new List<GameObject>(); // Seznam aktuálně spawnovaných nepřátel
 
@@ -38,9 +40,11 @@ public class EnemySpawner : MonoBehaviour
                     yield return new WaitForSeconds(timeBetweenWaves[waveIndex]);
                 }
                 else
-                {
+                {   
+                    GameCanEnd = true;
                     Debug.Log("Všechny vlny byly generovány.");
                     break;
+                    
                 }
 
                 waveIndex++;
@@ -62,6 +66,11 @@ public class EnemySpawner : MonoBehaviour
 
         // Aktualizace UI s počtem aktuálně spawnovaných nepřátel
         enemyCountText.text = "Enemies to kill: " + currentEnemies.Count.ToString();
+
+        if(currentEnemies.Count == 0 && GameCanEnd == true)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     public void EnemyDestroyed(GameObject enemy)

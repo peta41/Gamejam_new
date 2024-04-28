@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = customSpeed;
-        Player = GameObject.Find("Player").transform;  
+       Player = GameObject.FindWithTag("Player").transform;
         animator = GetComponent<Animator>(); // Získání komponenty Animator
     }
 
