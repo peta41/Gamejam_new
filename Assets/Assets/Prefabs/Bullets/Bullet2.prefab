@@ -73,10 +73,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031dc143034c24839b14a23e5992ec2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 35
+  damage: 50
   speed: 20
   rb: {fileID: 6282563951348033816}
-  impactEffect: {fileID: 4773059451946283006}
+  impactEffect: {fileID: 6969245875107871824, guid: 2e187e22a11f364409b0a3f4d03c36a8, type: 3}
   impactSound: {fileID: 8300000, guid: cead8e5d0be804ea990eda557c2788ef, type: 3}
 --- !u!1 &4773059451946283006
 GameObject:
