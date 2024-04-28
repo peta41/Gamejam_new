@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     public int hp;
     public int maxHP = 100;
     private Animator animator; // Reference na Animator
-    public string nextSceneName = "NextScene"; // Název scény, na kterou se přejde po smrti
+    public string nextSceneName = "DeathScene"; // Název scény, na kterou se přejde po smrti
 
     void Start()
     {
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(hp);
+
     }
        private void Die()
     {

@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
         void OnTriggerEnter(Collider other)
     {
-        // Zkontrolujte, zda se kolidující objekt jmenuje "Enemy"
+        // Zkontrolujte, zda se kolidující objekt jmenuje "Player"
         if (other.gameObject.CompareTag("Player"))
         {
             // Získání skriptu Enemy z kolidujícího objektu
@@ -17,7 +16,7 @@ public class Enemy : MonoBehaviour
             if (player != null)
             {
                 
-                // Aplikace škody na objekt "Enemy"
+                Debug.Log("Hit Enemy");
                 player.TakeDamage(10); // Předpokládáme, že metoda TakeDamage přijímá hodnotu škody jako argument
             }
         }

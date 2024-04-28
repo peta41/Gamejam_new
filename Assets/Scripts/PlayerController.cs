@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
         // Kontrola pro útok
         if (Input.GetMouseButtonDown(0)) // Odebrána kontrola, zda hráč může střílet
         {
+            
             Attack();
         }
     }
