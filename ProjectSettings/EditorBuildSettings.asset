@@ -11,12 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene/WeaponSelect.unity
     guid: 6a1c7296ad0d3cf42be47f26cb8d78ee
-<<<<<<< HEAD
-  - enabled: 0
-    path: Assets/Scenes/SampleScene/Shark Scene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-=======
->>>>>>> 88ab2cce3540b629c2fc56d59eba288dff741fe3
   - enabled: 1
     path: Assets/Scenes/SampleScene/DeathScene.unity
     guid: 49d4bd521bcdfb245abedf0b82bd11ee
@@ -28,7 +22,7 @@ EditorBuildSettings:
     guid: a213fcdebb0c5411bb1a93e148a4445c
   - enabled: 1
     path: Assets/Scenes/SampleScene/Shark Scene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    guid: f122479109a2740a3afada3ef4f3dec2
   - enabled: 1
     path: Assets/Scenes/SampleScene/OptionsScene.unity
     guid: bc91366d16ff4d749811e76a525db9f1

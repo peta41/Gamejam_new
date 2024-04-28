@@ -4,23 +4,36 @@ using UnityEngine;
 
 public class ZralokHitbox : MonoBehaviour
 {
+    public int damageAmount = 50; // Množství škody, které se aplikuje
+    public AudioClip hitSound; // Zvukový klip, který se spustí při kolizi
+    public AudioSource audioSource; // Komponenta AudioSource pro spuštění zvuku
 
-    // a jak na ně aplikovat škodu. Tento příklad předpokládá, že máte metodu TakeDamage v skriptu Enemy.
+    void Start()
+    {
+        // Získání komponenty AudioSource
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
         // Zkontrolujte, zda se kolidující objekt jmenuje "Enemy"
         if (other.gameObject.CompareTag("Enemy"))
         {
-            // Získání skriptu Enemy z kolidujícího objektu
+            // Získání skriptu EnemyStats z kolidujícího objektu
             EnemyStats enemyScript = other.gameObject.GetComponent<EnemyStats>();
 
-            // Kontrola, zda má objekt skript Enemy
+            // Kontrola, zda má objekt skript EnemyStats
             if (enemyScript != null)
             {
                 Debug.Log("Zralok hit");
                 // Aplikace škody na objekt "Enemy"
-                enemyScript.TakeDamage(50); // Předpokládáme, že metoda TakeDamage přijímá hodnotu škody jako argument
+                enemyScript.TakeDamage(damageAmount); // Aplikace škody
+
+                // Spuštění zvuku
+                if (audioSource != null && hitSound != null)
+                {
+                    audioSource.PlayOneShot(hitSound);
+                }
             }
         }
     }

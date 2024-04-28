@@ -22,35 +22,38 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(SpawnWaves());
     }
 
-    IEnumerator SpawnWaves()
+ IEnumerator SpawnWaves()
+{
+    while (true)
     {
-        while (true)
+        if (waveIndex < numberOfEnemies.Length)
         {
-            if (waveIndex < numberOfEnemies.Length)
+            // Resetování počtu nepřátel na začátku každé nové vlny
+            int enemiesToSpawn = numberOfEnemies[waveIndex];
+            currentEnemies.Clear(); // Odebrání všech aktuálně spawnovaných nepřátel
+
+            for (int i = 0; i < enemiesToSpawn; i++)
             {
-                for (int i = 0; i < numberOfEnemies[waveIndex]; i++)
-                {
-                    SpawnEnemy();
-                    yield return new WaitForSeconds(timeBetweenSpawns);
-                }
-
-                // Pokud je další vlna, čekáme na určený čas
-                if (waveIndex + 1 < timeBetweenWaves.Length)
-                {
-                    yield return new WaitForSeconds(timeBetweenWaves[waveIndex]);
-                }
-                else
-                {   
-                    GameCanEnd = true;
-                    Debug.Log("Všechny vlny byly generovány.");
-                    break;
-                    
-                }
-
-                waveIndex++;
+                SpawnEnemy();
+                yield return new WaitForSeconds(timeBetweenSpawns);
             }
+
+            // Pokud je další vlna, čekáme na určený čas
+            if (waveIndex + 1 < timeBetweenWaves.Length)
+            {
+                yield return new WaitForSeconds(timeBetweenWaves[waveIndex]);
+            }
+            else
+            {   
+                GameCanEnd = true;
+                Debug.Log("Všechny vlny byly generovány.");
+                break;
+            }
+
+            waveIndex++;
         }
     }
+}
 
     void SpawnEnemy()
     {
@@ -60,22 +63,46 @@ public class EnemySpawner : MonoBehaviour
         currentEnemies.Add(enemy); // Přidání spawnovaného nepřátelce do seznamu
     }
 
-    void Update()
+ void Update()
+{
+    // Aktualizace UI s počtem nepřátel v aktuální vlně
+    if (waveIndex < numberOfEnemies.Length)
     {
-
-
-        // Aktualizace UI s počtem aktuálně spawnovaných nepřátel
-        enemyCountText.text = "Enemies to kill: " + currentEnemies.Count.ToString();
-
-        if(currentEnemies.Count == 0 && GameCanEnd == true)
-        {
-            SceneManager.LoadScene(1);
-        }
+        enemyCountText.text = "Enemies to kill: " + numberOfEnemies[waveIndex].ToString();
     }
+    else
+    {
+        enemyCountText.text = "All enemies have been spawned.";
+    }
+
+    if(currentEnemies.Count == 0 && GameCanEnd == true)
+    {
+        SceneManager.LoadScene(7);
+    }
+}
+
 
     public void EnemyDestroyed(GameObject enemy)
     {
         currentEnemies.Remove(enemy); // Odebrání zničeného nepřátelce ze seznamu
+        numberOfEnemies[waveIndex]--;
     }
+
+
+    private static bool isResetComplete = false;
+
+    public static void ResetCurrentEnemies()
+    {
+        // Logika pro resetování nepřátel
+        currentEnemies.Clear();
+        // Po dokončení resetování nastavte isResetComplete na true
+        isResetComplete = true;
+    }
+
+    public static bool IsResetComplete()
+    {
+        return isResetComplete;
+    }
+
 
 }

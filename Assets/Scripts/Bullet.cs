@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
             {
                 // Aplikace škody na nepřítele
                 enemyScript.TakeDamage(damage); 
-                Debug.Log("Bullet Hit");
+
                 
 
 
