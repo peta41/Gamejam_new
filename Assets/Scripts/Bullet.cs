@@ -30,8 +30,9 @@ public class Bullet : MonoBehaviour
                 // Aplikace škody na nepřítele
                 enemyScript.TakeDamage(damage); 
                 Debug.Log("Hit");
-
                 
+
+
                 // Vytvoření efektu dopadu na místě dopadu
                 if (impactEffect != null)
                 {

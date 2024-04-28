@@ -77,7 +77,7 @@ MonoBehaviour:
   speed: 20
   rb: {fileID: 6282563951348033816}
   impactEffect: {fileID: 4773059451946283006}
-  impactSound: {fileID: 0}
+  impactSound: {fileID: 8300000, guid: cead8e5d0be804ea990eda557c2788ef, type: 3}
 --- !u!1 &4773059451946283006
 GameObject:
   m_ObjectHideFlags: 0
