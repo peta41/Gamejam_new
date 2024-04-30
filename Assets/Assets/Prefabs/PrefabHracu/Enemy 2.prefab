@@ -1329,7 +1329,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1466,6 +1466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6dffaa39c394f15886925561e0fd78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &7393219800775079221
 GameObject:
   m_ObjectHideFlags: 0

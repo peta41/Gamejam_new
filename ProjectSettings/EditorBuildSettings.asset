@@ -6,27 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene/MainMenu.unity
+    path: Assets/Scenes/SampleScene/UI-Scenes/MainMenu.unity
     guid: c6507654229ab49c680763bd18e4a57f
   - enabled: 1
-    path: Assets/Scenes/SampleScene/WeaponSelect.unity
+    path: Assets/Scenes/SampleScene/UI-Scenes/WeaponSelect.unity
     guid: 6a1c7296ad0d3cf42be47f26cb8d78ee
   - enabled: 1
-    path: Assets/Scenes/SampleScene/DeathScene.unity
+    path: Assets/Scenes/SampleScene/UI-Scenes/DeathScene.unity
     guid: 49d4bd521bcdfb245abedf0b82bd11ee
   - enabled: 1
-    path: Assets/Scenes/SampleScene/Snake Scene.unity
+    path: Assets/Scenes/SampleScene/Snake-Scene/Snake Scene.unity
     guid: 30bd6c0afeb3f43dc9e7fd4f2b50c755
   - enabled: 1
-    path: Assets/Scenes/SampleScene/Llama Scene.unity
+    path: Assets/Scenes/SampleScene/Llama Scene/Llama Scene.unity
     guid: a213fcdebb0c5411bb1a93e148a4445c
   - enabled: 1
-    path: Assets/Scenes/SampleScene/Shark Scene.unity
+    path: Assets/Scenes/SampleScene/Shark Scene/Shark Scene.unity
     guid: f122479109a2740a3afada3ef4f3dec2
   - enabled: 1
-    path: Assets/Scenes/SampleScene/OptionsScene.unity
+    path: Assets/Scenes/SampleScene/UI-Scenes/OptionsScene.unity
     guid: bc91366d16ff4d749811e76a525db9f1
   - enabled: 1
-    path: Assets/Scenes/SampleScene/VictoryScene.unity
+    path: Assets/Scenes/SampleScene/UI-Scenes/VictoryScene.unity
     guid: 084bce4876bdf744c8a33afb75c1ff60
   m_configObjects: {}

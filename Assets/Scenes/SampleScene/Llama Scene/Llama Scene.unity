@@ -334,7 +334,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 0d5ea45c132ad46baa84aac07eb3d42f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 60651c16c493a41fb87e70123d151108, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &85559135
 Transform:
@@ -1317,7 +1317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 163, y: -34.7}
+  m_AnchoredPosition: {x: 163, y: -27.5}
   m_SizeDelta: {x: 300, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1486826469
@@ -1862,8 +1862,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.88528484, y: 0.7834947, z: 2.1938574}
-  m_Center: {x: -0.18097574, y: -0.48715094, z: -0.20012726}
+  m_Size: {x: 0.88528484, y: 0.8997299, z: 2.1938574}
+  m_Center: {x: -0.18097574, y: 0.032750964, z: -0.20012726}
 --- !u!4 &604024197640591805
 Transform:
   m_ObjectHideFlags: 0
@@ -2270,10 +2270,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &1941990686492916450
 GameObject:
@@ -4480,7 +4480,7 @@ Transform:
   m_GameObject: {fileID: 9044257587956363606}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.3152194, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:

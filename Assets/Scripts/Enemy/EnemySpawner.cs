@@ -81,12 +81,21 @@ public class EnemySpawner : MonoBehaviour
     }
 }
 
-
     public void EnemyDestroyed(GameObject enemy)
     {
         currentEnemies.Remove(enemy); // Odebrání zničeného nepřátelce ze seznamu
         numberOfEnemies[waveIndex]--;
+
+    // Aktualizace textu "Enemies to kill"
+    if (waveIndex < numberOfEnemies.Length)
+    {
+        enemyCountText.text = "Enemies to kill: " + numberOfEnemies[waveIndex].ToString();
     }
+    else
+    {
+        enemyCountText.text = "All enemies have been spawned.";
+    }
+}
 
 
     private static bool isResetComplete = false;
