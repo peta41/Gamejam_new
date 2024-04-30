@@ -1064,12 +1064,12 @@ MonoBehaviour:
   - {fileID: 716906170}
   - {fileID: 25118494}
   timeBetweenWaves:
-  - 1
+  - 2
   - 5
   - 5
   - 4
   timeBetweenSpawns: 2
-  numberOfEnemies: 050000000a0000000f00000014000000
+  numberOfEnemies: 010000000a0000000f00000014000000
   enemyCountText: {fileID: 1486826469}
 --- !u!1 &1231953777
 GameObject:
